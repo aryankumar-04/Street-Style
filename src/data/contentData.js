@@ -14,8 +14,8 @@ export const contentData = {
       card: {
         tag: "Steph",
         tagColor: "#00E5FF", // Cyan badge
-        graphic: "orbit",
-        title: "Y2K Vector Graphic"
+        image: "/asset/images/dress 5.png",
+        alt: "Streetwear Dress Mockup Card"
       },
       shirt: {
         image: "/asset/images/dress 1.png",
@@ -60,7 +60,7 @@ export const contentData = {
         name: "City of Shirts",
         price: 20.00,
         priceFormatted: "$20.00",
-        image: "/asset/images/dress 1.png",
+        image: "/asset/images/dress 2.png",
         category: "T-SHIRT",
         tag: null,
         description: "Heavyweight 240GSM organic cotton tee with landscape minimal print."
@@ -70,7 +70,7 @@ export const contentData = {
         name: "Street Smart Hoodie",
         price: 25.00,
         priceFormatted: "$25.00",
-        image: "/asset/images/dress 2.png",
+        image: "/asset/images/dress 3.png",
         category: "HOODIE",
         tag: {
           name: "Charlotte M",
@@ -83,7 +83,7 @@ export const contentData = {
         name: "Urban Sweat Shirt",
         price: 30.00,
         priceFormatted: "$30.00",
-        image: "/asset/images/dress 3.png",
+        image: "/asset/images/dress 4.png",
         category: "SWEATSHIRT",
         tag: null,
         description: "Relaxed fit drop-shoulder crewneck featuring raw seam detail."

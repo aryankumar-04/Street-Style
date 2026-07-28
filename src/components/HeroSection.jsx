@@ -77,20 +77,13 @@ export default function HeroSection({ onExploreClick }) {
                 <span>{mockups.card.tag}</span>
               </div>
 
-              {/* Card Graphic: Y2K Orbit Vector Emblem */}
-              <div className="aspect-[4/5] bg-neutral-50 rounded-xl flex items-center justify-center p-3 relative overflow-hidden border border-neutral-100">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-                  className="w-20 h-20 sm:w-24 sm:h-24 text-black flex items-center justify-center"
-                >
-                  <svg viewBox="0 0 100 100" className="w-full h-full stroke-black fill-none stroke-[2.5]">
-                    <ellipse cx="50" cy="50" rx="38" ry="14" transform="rotate(30 50 50)" />
-                    <ellipse cx="50" cy="50" rx="38" ry="14" transform="rotate(-30 50 50)" />
-                    <polygon points="50,30 55,45 70,50 55,55 50,70 45,55 30,50 45,45" fill="black" />
-                    <circle cx="50" cy="50" r="3" fill="white" />
-                  </svg>
-                </motion.div>
+              {/* Card Graphic: Dress 5 Mockup Image */}
+              <div className="aspect-[4/5] bg-neutral-50 rounded-xl flex items-center justify-center p-2 relative overflow-hidden border border-neutral-100">
+                <img
+                  src={mockups.card.image}
+                  alt={mockups.card.alt || "Dress Mockup"}
+                  className="w-full h-full object-contain filter drop-shadow-[0_10px_15px_rgba(0,0,0,0.15)]"
+                />
               </div>
             </motion.div>
 

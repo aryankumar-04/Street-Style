@@ -7,8 +7,8 @@ export default function RootsSection() {
 
   return (
     <section id="roots" className="relative w-full bg-[#161616] text-white overflow-hidden select-none">
-      {/* Full-bleed Grayscale Editorial Image Container matching Ref 2 */}
-      <div className="relative w-full h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden group">
+      {/* Full-bleed Grayscale Editorial Image Container */}
+      <div className="relative w-full min-h-[520px] h-[580px] sm:h-[700px] lg:h-[800px] overflow-hidden group">
         
         {/* Background Grayscale Image */}
         <img
@@ -17,14 +17,14 @@ export default function RootsSection() {
           className="w-full h-full object-cover object-center grayscale contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-1000 ease-out"
         />
 
-        {/* Editorial Subtle Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
+        {/* Editorial Gradient Overlay for Text Readability on Mobile */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
 
-        {/* Foreground Text Content Layout (Ref 2: Huge text on left bottom, paragraph directly over photo on right bottom) */}
-        <div className="absolute inset-0 max-w-[1280px] mx-auto px-6 sm:px-10 p-6 sm:p-10 flex flex-col justify-end">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        {/* Foreground Text Content Layout */}
+        <div className="absolute inset-0 max-w-[1280px] mx-auto px-4 sm:px-10 p-6 sm:p-10 flex flex-col justify-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end">
             
-            {/* Stacked Huge Heading (Ref 2: WE'RE / PROUD OF / OUR ROOTS) */}
+            {/* Stacked Huge Heading (WE'RE / PROUD OF / OUR ROOTS) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -35,14 +35,14 @@ export default function RootsSection() {
               {headlines.map((line, idx) => (
                 <h2
                   key={idx}
-                  className="font-display font-normal text-[clamp(3.2rem,8.5vw,9rem)] leading-[0.84] tracking-tighter text-white uppercase"
+                  className="font-display font-normal text-[clamp(2.4rem,7.5vw,9rem)] leading-[0.85] sm:leading-[0.84] tracking-tighter text-white uppercase"
                 >
                   {line}
                 </h2>
               ))}
             </motion.div>
 
-            {/* Right Side Paragraph Block directly over photo (Ref 2) */}
+            {/* Right Side Paragraph Block directly over photo */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function RootsSection() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5 max-w-lg lg:ml-auto"
             >
-              <p className="font-sans text-sm sm:text-base lg:text-lg text-white font-normal leading-relaxed tracking-wide drop-shadow-md">
+              <p className="font-sans text-xs sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed tracking-wide drop-shadow-md">
                 {bodyText}
               </p>
             </motion.div>

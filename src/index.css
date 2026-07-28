@@ -3,10 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
   body {
     background-color: #161616;
     color: #ffffff;
     font-family: 'Public Sans', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
   
   h1, h2, h3, .font-display {
@@ -27,6 +35,11 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #666666;
+}
+
+/* Touch friendly scrolling */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Glassmorphism helpers */

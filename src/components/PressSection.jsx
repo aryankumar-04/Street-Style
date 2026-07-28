@@ -7,11 +7,11 @@ export default function PressSection() {
 
   return (
     <section id="press" className="relative w-full bg-[#161616] text-white py-10 sm:py-16 select-none">
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-10">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
-          {/* Left Side Huge Heading (Ref 5: PRESS) */}
+          {/* Left Side Huge Heading */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -19,12 +19,12 @@ export default function PressSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 flex items-center"
           >
-            <h2 className="font-display font-normal text-[clamp(3rem,7.5vw,7.5rem)] leading-[0.85] tracking-tighter text-white uppercase">
+            <h2 className="font-display font-normal text-[clamp(2.2rem,7vw,7.5rem)] leading-[0.85] tracking-tighter text-white uppercase">
               {headline}
             </h2>
           </motion.div>
 
-          {/* Right Side 3 Editorial Quotes with Thin Dividers (Ref 5) */}
+          {/* Right Side 3 Editorial Quotes with Thin Dividers */}
           <div className="lg:col-span-7 flex flex-col space-y-6 sm:space-y-8">
             {quotes.map((quoteItem, idx) => (
               <motion.div
@@ -36,18 +36,18 @@ export default function PressSection() {
                 className="group flex flex-col"
               >
                 {/* Editorial Quote Text */}
-                <p className="font-sans text-base sm:text-lg text-neutral-200 font-light leading-relaxed tracking-wide mb-3">
+                <p className="font-sans text-sm sm:text-base lg:text-lg text-neutral-200 font-light leading-relaxed tracking-wide mb-3">
                   "{quoteItem.quote}"
                 </p>
 
                 {/* Publication Name in Uppercase */}
-                <h3 className="font-display font-normal text-lg sm:text-xl tracking-tight uppercase text-white group-hover:text-neutral-300 transition-colors">
+                <h3 className="font-display font-normal text-base sm:text-xl tracking-tight uppercase text-white group-hover:text-neutral-300 transition-colors">
                   {quoteItem.publication}
                 </h3>
 
-                {/* Ultra-Thin 1px Line Divider matching Ref 5 */}
+                {/* Thin Line Divider */}
                 {idx < quotes.length - 1 && (
-                  <div className="w-full h-[1px] bg-white/30 mt-8 sm:mt-10" />
+                  <div className="w-full h-[1px] bg-white/30 mt-6 sm:mt-8" />
                 )}
               </motion.div>
             ))}

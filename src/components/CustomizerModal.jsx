@@ -73,23 +73,24 @@ export default function CustomizerModal({ initialProduct, initialImage, onClose,
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-lg">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/90 backdrop-blur-lg overflow-y-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className="relative w-full max-w-5xl bg-neutral-900 border border-white/20 rounded-2xl overflow-hidden shadow-2xl text-white grid grid-cols-1 lg:grid-cols-12 max-h-[90vh]"
+          className="relative w-full max-w-5xl bg-neutral-900 border border-white/20 rounded-2xl overflow-hidden shadow-2xl text-white grid grid-cols-1 lg:grid-cols-12 max-h-[92vh] my-auto overflow-y-auto"
         >
           {/* Close */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-30 p-2 text-neutral-400 hover:text-white bg-black/50 rounded-full border border-white/10 backdrop-blur-sm"
+            className="absolute top-3 right-3 z-30 p-2.5 text-neutral-400 hover:text-white bg-black/60 hover:bg-black/90 rounded-full border border-white/10 backdrop-blur-sm transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+            aria-label="Close customizer"
           >
             <X size={20} />
           </button>
 
           {/* Left Canvas Preview Area (7 Cols) */}
-          <div className="lg:col-span-7 bg-black p-8 flex flex-col items-center justify-center relative border-b lg:border-b-0 lg:border-r border-white/10 min-h-[400px]">
+          <div className="lg:col-span-7 bg-black p-4 sm:p-8 flex flex-col items-center justify-center relative border-b lg:border-b-0 lg:border-r border-white/10 min-h-[340px] sm:min-h-[400px]">
             <div className="text-center mb-4">
               <span className="text-xs uppercase tracking-widest text-cyan-400 font-mono flex items-center justify-center gap-1">
                 <Sparkles size={12} /> Live Print Customizer

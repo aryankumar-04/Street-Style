@@ -10,7 +10,7 @@ export default function ValuesSection() {
     switch (iconType) {
       case 'flower':
         return (
-          <svg className="w-12 h-12 text-white fill-white" viewBox="0 0 100 100">
+          <svg className="w-8 h-8 sm:w-12 sm:h-12 text-white fill-white" viewBox="0 0 100 100">
             {/* 6-petal stylized flower icon */}
             <g transform="translate(50,50)">
               {[0, 60, 120, 180, 240, 300].map((angle, i) => (
@@ -30,7 +30,7 @@ export default function ValuesSection() {
         );
       case 'oval-disc':
         return (
-          <svg className="w-14 h-12 text-white fill-white" viewBox="0 0 100 100">
+          <svg className="w-9 h-8 sm:w-14 sm:h-12 text-white fill-white" viewBox="0 0 100 100">
             {/* Tilted oval disc icon matching Ref 3 */}
             <g transform="translate(50,50) rotate(-25)">
               <ellipse cx="0" cy="0" rx="42" ry="22" fill="white" />
@@ -53,7 +53,7 @@ export default function ValuesSection() {
         );
       case 'globe':
         return (
-          <svg className="w-12 h-12 text-white stroke-white fill-none stroke-[3]" viewBox="0 0 100 100">
+          <svg className="w-8 h-8 sm:w-12 sm:h-12 text-white stroke-white fill-none stroke-[3]" viewBox="0 0 100 100">
             {/* Wireframe globe matching Ref 3 */}
             <circle cx="50" cy="50" r="38" />
             <line x1="12" y1="50" x2="88" y2="50" />
@@ -69,10 +69,10 @@ export default function ValuesSection() {
 
   return (
     <section id="values" className="relative w-full bg-[#161616] text-white pt-10 sm:pt-16 pb-10 sm:pb-16 select-none">
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10 flex flex-col">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-10 flex flex-col">
         
-        {/* Top Right Stacked Heading (Ref 3: WE'RE / PROUD OF / OUR CLOTHES) */}
-        <div className="flex justify-end mb-12 sm:mb-16">
+        {/* Top Right Stacked Heading (WE'RE / PROUD OF / OUR CLOTHES) */}
+        <div className="flex justify-end mb-8 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,7 +83,7 @@ export default function ValuesSection() {
             {headlines.map((line, idx) => (
               <h2
                 key={idx}
-                className="font-display font-normal text-[clamp(3.2rem,8.5vw,9rem)] leading-[0.84] tracking-tighter text-white uppercase"
+                className="font-display font-normal text-[clamp(2.2rem,7.5vw,9rem)] leading-[0.85] sm:leading-[0.84] tracking-tighter text-white uppercase"
               >
                 {line}
               </h2>
@@ -91,8 +91,8 @@ export default function ValuesSection() {
           </motion.div>
         </div>
 
-        {/* Bottom Area: 3 Evenly Spaced Value Columns (Ref 3) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 items-start mt-4 mb-4">
+        {/* Bottom Area: 3 Value Columns Horizontal across all screens */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-8 lg:gap-16 items-start mt-2 mb-2">
           {items.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -100,26 +100,26 @@ export default function ValuesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col items-start gap-4 group"
+              className="flex flex-col items-start gap-2 sm:gap-4 group"
             >
               {/* Icon Container */}
               <div className="transition-transform duration-300 group-hover:scale-110 mb-1">
                 {renderIcon(item.icon)}
               </div>
 
-              {/* Stacked Title Lines matching Ref Image 3 */}
+              {/* Stacked Title Lines */}
               <div className="flex flex-col space-y-0">
                 {item.titleLines ? (
                   item.titleLines.map((line, lIdx) => (
                     <span
                       key={lIdx}
-                      className="font-display font-normal text-xl sm:text-2xl lg:text-3xl leading-[0.9] tracking-tighter uppercase text-white"
+                      className="font-display font-normal text-[11px] sm:text-2xl lg:text-3xl leading-[0.95] sm:leading-[0.9] tracking-tighter uppercase text-white"
                     >
                       {line}
                     </span>
                   ))
                 ) : (
-                  <h3 className="font-display font-normal text-xl sm:text-2xl lg:text-3xl leading-[0.9] tracking-tighter uppercase text-white">
+                  <h3 className="font-display font-normal text-[11px] sm:text-2xl lg:text-3xl leading-[0.95] sm:leading-[0.9] tracking-tighter uppercase text-white">
                     {item.title}
                   </h3>
                 )}

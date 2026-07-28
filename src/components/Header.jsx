@@ -66,10 +66,10 @@ export default function Header({ cartCount, onOpenCart, onOpenCustomizer }) {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-5 text-white">
+          <div className="flex items-center gap-3 sm:gap-5 text-white">
             <button
               onClick={onOpenCustomizer}
-              className="hidden lg:flex items-center gap-1.5 text-xs tracking-wider uppercase bg-white/10 hover:bg-white/20 border border-white/20 px-3.5 py-1.5 rounded-full transition-all"
+              className="hidden lg:flex items-center gap-1.5 text-xs tracking-wider uppercase bg-white/10 hover:bg-white/20 border border-white/20 px-3.5 py-2 rounded-full transition-all min-h-[40px]"
             >
               <span>Custom Studio</span>
               <ArrowUpRight size={14} />
@@ -77,12 +77,12 @@ export default function Header({ cartCount, onOpenCart, onOpenCustomizer }) {
 
             <button
               onClick={onOpenCart}
-              className="relative p-2 hover:bg-white/10 rounded-full transition-colors"
+              className="relative p-2.5 sm:p-2 hover:bg-white/10 rounded-full transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
               aria-label="View Shopping Bag"
             >
               <ShoppingBag size={20} className="stroke-[1.5]" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-white text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute top-1 right-1 sm:-top-1 sm:-right-1 bg-white text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow">
                   {cartCount}
                 </span>
               )}
@@ -90,7 +90,7 @@ export default function Header({ cartCount, onOpenCart, onOpenCustomizer }) {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-white hover:opacity-70 transition-opacity"
+              className="md:hidden p-2.5 text-white hover:opacity-70 transition-opacity flex items-center justify-center min-w-[44px] min-h-[44px]"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

@@ -145,8 +145,9 @@ Street-Style/
 
 Developed with ❤️ by **[Aryan Kumar](https://github.com/aryankumar-04)**
 
-- GitHub: [@aryankumar-04](https://github.com/aryankumar-04)
-- Repository: [aryankumar-04/Street-Style](https://github.com/aryankumar-04/Street-Style)
+- 🌐 **Live Demo:** https://street-style-zhq1.onrender.com/
+- 💻 **GitHub:** [@aryankumar-04](https://github.com/aryankumar-04)
+- 📦 **Repository:** [aryankumar-04/Street-Style](https://github.com/aryankumar-04/Street-Style)
 
 ---
 

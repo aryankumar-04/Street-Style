@@ -8,27 +8,78 @@ export default function HeroSection({ onExploreClick }) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen lg:h-screen max-h-none lg:max-h-[960px] bg-[#161616] text-white pt-20 sm:pt-24 lg:pt-20 pb-8 sm:pb-10 px-4 sm:px-10 lg:px-16 flex flex-col justify-between overflow-hidden select-none"
+      className="relative h-[100vh] h-[100svh] min-h-[100vh] min-h-[100svh] bg-[#161616] text-white pt-20 sm:pt-24 lg:pt-20 pb-6 sm:pb-8 px-4 sm:px-10 lg:px-16 flex flex-col justify-between overflow-hidden select-none"
     >
       {/* Background Subtle Gradient Glow */}
       <div className="absolute top-1/4 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-white/[0.02] rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Container */}
-      <div className="max-w-[1280px] mx-auto w-full flex-1 flex flex-col justify-between relative z-10 pt-2 sm:pt-4">
+      <div className="max-w-[1280px] mx-auto w-full flex-1 flex flex-col justify-between relative z-10 pt-1 sm:pt-4">
         
 
-        {/* Hero Content Grid: Left Giant Typography, Right Layered Mockups matching Image 2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center flex-1 my-auto">
+        {/* Hero Content Grid: Desktop = Text Left / Images Right; Mobile = Images Top / Text Middle (Image 1) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-4 items-center flex-1 my-auto">
           
-          {/* Stacked Giant Typography (FIND / YOUR / VIBE matching Ref Image 2) */}
-          <div className="lg:col-span-8 flex flex-col justify-center space-y-0 z-20 overflow-hidden">
+          {/* Product Mockup Visuals Layer (Mobile = Order 1 Top centered overlapping pair matching Image 1; Desktop = Order 2 Right) */}
+          <div className="order-1 lg:order-2 lg:col-span-4 relative h-[230px] sm:h-[320px] lg:h-[450px] flex items-center justify-center lg:justify-end my-1 sm:my-2 lg:my-0 w-full">
+            
+            {/* Centered Overlapping Pair Container */}
+            <div className="relative inline-flex items-center justify-center pl-10 sm:pl-14 lg:pl-0">
+              
+              {/* Floating Card Mockup (Steph badge + Dress 5) overlapping shirt top-left */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85, rotate: -12 }}
+                animate={{ opacity: 1, scale: 1, rotate: -6 }}
+                transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ scale: 1.05, rotate: -2, y: -6 }}
+                className="absolute -left-12 sm:-left-16 lg:-left-10 top-0 sm:top-6 z-20 w-36 sm:w-44 lg:w-48 p-2.5 sm:p-4 bg-white text-black rounded-2xl shadow-2xl border border-neutral-200 cursor-pointer group transition-shadow"
+              >
+                {/* Steph Badge Tag */}
+                <div className="absolute -top-2.5 -left-2.5 bg-[#00E5FF] text-black text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full flex items-center gap-1 shadow-md">
+                  <svg className="w-3 h-3 fill-black" viewBox="0 0 24 24">
+                    <path d="M3 3l7 18 3-7 7-3L3 3z" />
+                  </svg>
+                  <span>{mockups.card.tag}</span>
+                </div>
+
+                {/* Card Graphic: Dress 5 Mockup Image */}
+                <div className="aspect-[4/5] bg-neutral-50 rounded-xl flex items-center justify-center p-1.5 sm:p-2 relative overflow-hidden border border-neutral-100">
+                  <img
+                    src={mockups.card.image}
+                    alt={mockups.card.alt || "Dress Mockup"}
+                    className="w-full h-full object-contain filter drop-shadow-[0_10px_15px_rgba(0,0,0,0.15)]"
+                  />
+                </div>
+              </motion.div>
+
+              {/* White T-Shirt Mockup Image (Rotated main dress 1) */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, rotate: 8 }}
+                animate={{ opacity: 1, scale: 1, rotate: 4 }}
+                transition={{ duration: 1, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ scale: 1.04, rotate: 0, y: -6 }}
+                className="relative z-10 w-48 sm:w-64 lg:w-80 group cursor-pointer"
+              >
+                <img
+                  src={mockups.shirt.image}
+                  alt={mockups.shirt.alt}
+                  className="w-full h-auto object-contain filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.9)] transition-transform duration-500 group-hover:scale-105"
+                />
+              </motion.div>
+
+            </div>
+
+          </div>
+
+          {/* Stacked Giant Typography (Mobile = Order 2 Middle; Desktop = Order 1 Left) */}
+          <div className="order-2 lg:order-1 lg:col-span-8 flex flex-col justify-center space-y-0 z-20 overflow-hidden">
             {/* FIND */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h1 className="font-display font-normal text-[clamp(2.8rem,9.5vw,11.5rem)] leading-[0.85] sm:leading-[0.83] tracking-tighter text-white uppercase text-left">
+              <h1 className="font-display font-normal text-[clamp(3.6rem,12.5vw,11.5rem)] leading-[0.85] sm:leading-[0.83] tracking-tighter text-white uppercase text-left">
                 {headlines[0]}
               </h1>
             </motion.div>
@@ -38,9 +89,9 @@ export default function HeroSection({ onExploreClick }) {
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="pl-[12%] sm:pl-[20%] md:pl-[28%]"
+              className="pl-[18%] sm:pl-[20%] md:pl-[28%]"
             >
-              <h1 className="font-display font-normal text-[clamp(2.8rem,9.5vw,11.5rem)] leading-[0.85] sm:leading-[0.83] tracking-tighter text-white uppercase">
+              <h1 className="font-display font-normal text-[clamp(3.6rem,12.5vw,11.5rem)] leading-[0.85] sm:leading-[0.83] tracking-tighter text-white uppercase">
                 {headlines[1]}
               </h1>
             </motion.div>
@@ -50,78 +101,32 @@ export default function HeroSection({ onExploreClick }) {
               initial={{ opacity: 0, x: 15 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="pl-[28%] sm:pl-[44%] md:pl-[58%]"
+              className="pl-[38%] sm:pl-[44%] md:pl-[58%]"
             >
-              <h1 className="font-display font-normal text-[clamp(2.8rem,9.5vw,11.5rem)] leading-[0.85] sm:leading-[0.83] tracking-tighter text-white uppercase">
+              <h1 className="font-display font-normal text-[clamp(3.6rem,12.5vw,11.5rem)] leading-[0.85] sm:leading-[0.83] tracking-tighter text-white uppercase">
                 {headlines[2]}
               </h1>
             </motion.div>
           </div>
 
-          {/* Right Layered Mockup Visuals matching Ref Image 2 */}
-          <div className="lg:col-span-4 relative h-[250px] sm:h-[360px] lg:h-[450px] flex items-center justify-center lg:justify-end mt-2 lg:mt-0 w-full">
-            
-            {/* Floating Card Mockup (Steph badge + Dress 5) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85, rotate: -12 }}
-              animate={{ opacity: 1, scale: 1, rotate: -6 }}
-              transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ scale: 1.05, rotate: -2, y: -6 }}
-              className="absolute left-2 sm:left-8 lg:-left-10 top-2 sm:top-6 z-20 w-32 sm:w-40 lg:w-48 p-2.5 sm:p-4 bg-white text-black rounded-2xl shadow-2xl border border-neutral-200 cursor-pointer group transition-shadow"
-            >
-              {/* Steph Badge Tag */}
-              <div className="absolute -top-2.5 -left-2.5 bg-[#00E5FF] text-black text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full flex items-center gap-1 shadow-md">
-                <svg className="w-3 h-3 fill-black" viewBox="0 0 24 24">
-                  <path d="M3 3l7 18 3-7 7-3L3 3z" />
-                </svg>
-                <span>{mockups.card.tag}</span>
-              </div>
-
-              {/* Card Graphic: Dress 5 Mockup Image */}
-              <div className="aspect-[4/5] bg-neutral-50 rounded-xl flex items-center justify-center p-1.5 sm:p-2 relative overflow-hidden border border-neutral-100">
-                <img
-                  src={mockups.card.image}
-                  alt={mockups.card.alt || "Dress Mockup"}
-                  className="w-full h-full object-contain filter drop-shadow-[0_10px_15px_rgba(0,0,0,0.15)]"
-                />
-              </div>
-            </motion.div>
-
-            {/* White T-Shirt Mockup Image (Rotated main dress 1) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, rotate: 8 }}
-              animate={{ opacity: 1, scale: 1, rotate: 4 }}
-              transition={{ duration: 1, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ scale: 1.04, rotate: 0, y: -6 }}
-              className="relative z-10 w-48 sm:w-64 lg:w-80 group cursor-pointer ml-auto lg:ml-0"
-            >
-              <img
-                src={mockups.shirt.image}
-                alt={mockups.shirt.alt}
-                className="w-full h-auto object-contain filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.9)] transition-transform duration-500 group-hover:scale-105"
-              />
-            </motion.div>
-
-          </div>
-
         </div>
 
-        {/* Hero Bottom Row: Subtitle (Lower Left) + Circular CTA (Lower Right) */}
-        <div className="mt-4 sm:mt-6 lg:mt-2 flex flex-row items-end justify-between gap-4 relative z-20">
+        {/* Hero Bottom Row: Subtitle (Lower Left) + Circular CTA Button with Arrow (Lower Right) */}
+        <div className="mt-2 sm:mt-4 flex flex-row items-end justify-between gap-4 relative z-20">
           
           {/* Subtitle Text */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="max-w-[180px] sm:max-w-sm"
+            className="max-w-[170px] sm:max-w-sm"
           >
-            <p className="font-sans text-xs sm:text-lg text-white font-medium leading-snug">
+            <p className="font-sans text-[11px] sm:text-lg text-white font-medium leading-snug">
               Check out our Captivating<br />Cities shirt collection
             </p>
           </motion.div>
 
-          {/* Circular Outlined CTA Button */}
+          {/* Circular Outlined CTA Button with Arrow matching Image 1 */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -136,12 +141,15 @@ export default function HeroSection({ onExploreClick }) {
               className="group relative w-20 h-20 sm:w-28 sm:h-28 rounded-full border border-white/60 flex items-center justify-center text-center p-2 transition-all duration-300 hover:border-white hover:bg-white hover:text-black cursor-pointer shadow-lg active:scale-95"
             >
               <div className="flex flex-col items-center justify-center leading-tight">
-                <span className="font-display font-medium text-[10px] sm:text-xs uppercase tracking-widest group-hover:underline decoration-1 underline-offset-4">
+                <span className="font-display font-medium text-[9px] sm:text-xs uppercase tracking-widest group-hover:underline decoration-1 underline-offset-4">
                   EXPLORE
                 </span>
-                <span className="font-display font-medium text-[10px] sm:text-xs uppercase tracking-widest group-hover:underline decoration-1 underline-offset-4">
+                <span className="font-display font-medium text-[9px] sm:text-xs uppercase tracking-widest group-hover:underline decoration-1 underline-offset-4">
                   HERE
                 </span>
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 mt-0.5 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
               </div>
             </a>
           </motion.div>

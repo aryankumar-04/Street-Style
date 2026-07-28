@@ -91,7 +91,7 @@ export default function ValuesSection() {
           </motion.div>
         </div>
 
-        {/* Bottom Area: 3 Value Columns Horizontal across all screens */}
+        {/* Bottom Area: 3 Value Columns Horizontal & Centered on mobile */}
         <div className="grid grid-cols-3 gap-2 sm:gap-8 lg:gap-16 items-start mt-2 mb-2">
           {items.map((item, idx) => (
             <motion.div
@@ -100,15 +100,15 @@ export default function ValuesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col items-start gap-2 sm:gap-4 group"
+              className="flex flex-col items-center text-center md:items-start md:text-left gap-2 sm:gap-4 group"
             >
               {/* Icon Container */}
-              <div className="transition-transform duration-300 group-hover:scale-110 mb-1">
+              <div className="transition-transform duration-300 group-hover:scale-110 mb-1 flex items-center justify-center">
                 {renderIcon(item.icon)}
               </div>
 
               {/* Stacked Title Lines */}
-              <div className="flex flex-col space-y-0">
+              <div className="flex flex-col space-y-0 items-center text-center md:items-start md:text-left">
                 {item.titleLines ? (
                   item.titleLines.map((line, lIdx) => (
                     <span

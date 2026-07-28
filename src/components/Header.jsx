@@ -36,24 +36,33 @@ export default function Header({ cartCount, onOpenCart, onOpenCustomizer }) {
             : 'bg-transparent py-6'
         }`}
       >
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 flex items-center justify-between">
-          {/* Top Left Brand Logo Image + STREET STYLE Name */}
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-10 flex items-center justify-between w-full relative">
+          {/* Mobile Left: Hamburger Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-white hover:opacity-70 transition-opacity flex items-center justify-center min-w-[44px] min-h-[44px] z-10"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Brand Logo (Centered on Mobile, Left-aligned on Desktop) */}
           <a
             href="#hero"
-            className="flex items-center gap-3 group cursor-pointer text-white hover:opacity-85 transition-opacity"
+            className="flex items-center gap-2 sm:gap-3 group cursor-pointer text-white hover:opacity-85 transition-opacity md:static absolute left-1/2 -translate-x-1/2 md:translate-x-0 z-10"
           >
             <img
               src={contentData.brand.logoImage || "/asset/images/logo.png"}
               alt="Street Style Logo"
-              className="h-7 sm:h-9 w-auto object-contain"
+              className="h-6 sm:h-9 w-auto object-contain"
             />
-            <span className="font-sans font-medium text-lg sm:text-xl tracking-tight uppercase text-white">
+            <span className="font-sans font-medium text-base sm:text-xl tracking-tight uppercase text-white whitespace-nowrap">
               {contentData.brand.name}
             </span>
           </a>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase font-medium text-neutral-400">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-xs tracking-widest uppercase font-medium text-neutral-400">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -65,11 +74,11 @@ export default function Header({ cartCount, onOpenCart, onOpenCustomizer }) {
             ))}
           </nav>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-3 sm:gap-5 text-white">
+          {/* Right Actions (Cart Icon & Custom Studio) */}
+          <div className="flex items-center gap-2 sm:gap-5 text-white z-10">
             <button
               onClick={onOpenCustomizer}
-              className="hidden lg:flex items-center gap-1.5 text-xs tracking-wider uppercase bg-white/10 hover:bg-white/20 border border-white/20 px-3.5 py-2 rounded-full transition-all min-h-[40px]"
+              className="hidden sm:flex lg:flex items-center gap-1.5 text-xs tracking-wider uppercase bg-white/10 hover:bg-white/20 border border-white/20 px-3.5 py-2 rounded-full transition-all min-h-[40px]"
             >
               <span>Custom Studio</span>
               <ArrowUpRight size={14} />
@@ -77,23 +86,15 @@ export default function Header({ cartCount, onOpenCart, onOpenCustomizer }) {
 
             <button
               onClick={onOpenCart}
-              className="relative p-2.5 sm:p-2 hover:bg-white/10 rounded-full transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
+              className="relative p-2 hover:bg-white/10 rounded-full transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
               aria-label="View Shopping Bag"
             >
               <ShoppingBag size={20} className="stroke-[1.5]" />
               {cartCount > 0 && (
-                <span className="absolute top-1 right-1 sm:-top-1 sm:-right-1 bg-white text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow">
+                <span className="absolute top-1 right-1 bg-white text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow">
                   {cartCount}
                 </span>
               )}
-            </button>
-
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2.5 text-white hover:opacity-70 transition-opacity flex items-center justify-center min-w-[44px] min-h-[44px]"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>

@@ -25,17 +25,17 @@
 
 <div align="center">
 
-| **01. Hero & Y2K Orbit Collection** | **02. Live Custom Print Studio** |
+| **01. Hero Section** | **02. Editorial Story & Roots** |
 | :---: | :---: |
-| <img src="asset/images/1.png" alt="Hero Section" width="500" /> | <img src="asset/images/5.png" alt="Customizer Studio" width="500" /> |
+| <img src="asset/images/hero.png" alt="Hero Section" width="500" /> | <img src="asset/images/root.png" alt="Editorial Story & Roots" width="500" /> |
 
-| **03. Brand Values & Aesthetic Grid** | **04. New Arrivals Collection** |
+| **03. Brand Values** | **04. New Arrivals Collection** |
 | :---: | :---: |
-| <img src="asset/images/3.png" alt="Brand Values" width="500" /> | <img src="asset/images/4.png" alt="New Arrivals" width="500" /> |
+| <img src="asset/images/values.png" alt="Brand Values" width="500" /> | <img src="asset/images/new arrival.png" alt="New Arrivals Collection" width="500" /> |
 
-| **05. Editorial Story & Roots** | **06. Partnerships & Contact Grid** |
+| **05. Press Section** | **06. Contact & Partnerships** |
 | :---: | :---: |
-| <img src="asset/images/2.png" alt="Roots Story" width="500" /> | <img src="asset/images/6.png" alt="Contact & Partnerships" width="500" /> |
+| <img src="asset/images/press.png" alt="Press Section" width="500" /> | <img src="asset/images/footer.png" alt="Contact & Partnerships" width="500" /> |
 
 </div>
 
